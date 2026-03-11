@@ -45,8 +45,8 @@ namespace SupplySync.Config.Configurations
 
 			builder.Property(x => x.Action).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Resource).IsRequired().HasMaxLength(200);
-
-            builder.Property(x => x.Timestamp).HasDefaultValueSql("GETUTCDATE()");
+			builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+			builder.Property(x => x.Timestamp).HasDefaultValueSql("GETUTCDATE()");
             builder.Property(x => x.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
             builder.Property(x => x.UpdatedAt).HasDefaultValueSql("GETUTCDATE()");
 
